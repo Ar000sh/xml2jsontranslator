@@ -1,0 +1,24 @@
+image: maven:latest
+#inspired by https://gitlab.com/gitlab-examples/maven/simple-maven-example
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  MAVEN_CLI_OPTS: "--batch-mode"
+
+cache:
+  paths:
+    - .m2/repository/
+    - target/
+
+
+
+Build:
+  stage: build
+  script:
+    - mvn $MAVEN_CLI_OPTS compile
+
+Test:
+  stage: test
+  script:
+    - mvn -Dtest=Test test
+
+
