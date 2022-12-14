@@ -1,0 +1,6 @@
+{
+  "description": "widget",
+  "window": {"title": "widget", "name": "main_window", "width": "500", "height": "500"},
+  "image": {"src": "Images/Sun.png", "name": "sun1", "alignment": "center"},
+  "text": {"data": "Click Here", "size": "36", "name": "text1"}
+}

@@ -1,0 +1,15 @@
+empty() ::= ""
+
+atom(value) ::= "<value>"
+
+pair(tag,value) ::= <<
+\<<tag>\><value>\</<tag>\>
+>>
+array(value) ::= <<
+
+<value:{ item |\<element><item>\</element><\n>}>
+>>
+object(pair) ::= <<
+
+<pair:{ item |<item><\n>}>
+>>
