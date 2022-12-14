@@ -1,0 +1,33 @@
+empty() ::= ""
+document(elements) ::= <<
+{
+<elements>
+}
+>>
+object(element) ::= <<
+{<element:{ item |<item>}; separator=", ">}
+>>
+array(element) ::= <<
+[<element:{ item |<item>}; separator=", ">]
+>>
+elements(element,lastelement) ::= <<
+{
+  <element:{ item |<item>,}; separator="\n">
+  <lastelement>
+}
+>>
+
+value(val) ::= "<val>"
+
+element(name,value)::= <<
+"<name>": "<value>"
+>>
+elementObjectOrArray(name,value)::= <<
+"<name>": <value>
+>>
+arrayElement(name)::= <<
+"<name>"
+>>
+emptyarray(name) ::= <<
+"<name>": []
+>>
